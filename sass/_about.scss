@@ -1,0 +1,62 @@
+@use 'mixin' as m;
+@use 'variables' as v;
+
+
+
+#about {
+    display: block;
+    justify-content: space-between;
+    
+    .page-title {
+        padding-top: 100px;
+        font-size: 64px;
+    }
+
+    .about-visual_grid {
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        gap: 24px;
+    }
+
+    // .wrapper {
+    //     padding-top: 120px;
+    // }
+
+
+    .about-image {
+        width: 50%;
+    }
+
+}
+
+#about-content {
+    .wrapper {
+
+        display: flex;
+        // grid-template-columns: 200px 1fr 200px;
+        gap: 80px;
+        align-items: center;
+        margin-bottom: 80px;
+            
+        .about-text h2 {
+            font-size: 42px;
+            margin-bottom: 30px;
+        }
+            
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .about_leftimage {
+            width: 250px;
+            // height: 50px;
+            padding-top: 200px;
+        }
+
+        .about_rightimage {
+            width: 600px;
+            padding-bottom: 100px;
+        }
+    }
+}

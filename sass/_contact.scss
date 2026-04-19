@@ -1,0 +1,22 @@
+@use 'mixin' as m;
+@use 'variables' as v;
+
+
+#contact {
+    color: #fff;
+    padding: 60px 20px;
+    
+        
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+        
+            .small {
+                font-size: 24px;
+                color: #333;
+                padding-top: 50px;
+            }
+        }
+
+}
