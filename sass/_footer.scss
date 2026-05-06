@@ -5,22 +5,27 @@
 
 footer {
     // border-top:1px solid #eee;
-    padding:60px 20px;
+    padding: 60px 20px 20px 20px;
     background-color: black;
+
+    @include m.bp {
+        padding: 30px 60px 10px 60px;
+    }
     
     #footer {
-        max-width:1100px;
-        margin:auto;
+        max-width: 1100px;
+        margin: auto;
 
         a {
             color: white;
+            
         }
         
         .footer-inner {
-            display:flex;
-            justify-content:space-between;
+            display: flex;
+            justify-content: space-between;
             
-        }
+        
             .footer_logo {
                 display: flex;
                 color: white;
@@ -30,75 +35,91 @@ footer {
                     height: 90px;
                     padding-bottom: 30px;
                 }
-                // a {
-                //     width: 100px;
-                //     height: 100px;
-                // }
 
                 span {
                     font-size: 24px;
 
+                    @include m.bp {
+                        font-size: 12px;
+                    }
+
                 }
-    
+            }
         }
 
-        .footer-nav ul{
-            display:flex;
-            flex-direction:column;
-            gap:10px;
-            font-size:20px;
+        .footer-nav ul {
+            // display: flex;
+            gap: 10px;
+            font-size: 20px;
+
+            @include m.bp {
+                flex-direction: column;
+                font-size: 14px;
+            }
         }
         
-        .footer-sns{
-            display:flex;
-            flex-direction:column;
-            gap:10px;
+        .footer-sns {
+            flex-direction: column;
 
-            
-            
-            img {
-                width: 20px;
-                margin-right: 6px;
-                margin-bottom: 6px;
+            // gap: 10px;
+
+            // @include m.bp {
+            //      display: flex;
+
+            // }
+
+            .footer-snslist {
+                // width: 100px;
+                font-size: 16px;
+                display: flex;
+                flex-direction: column;
+                padding-right: 30px;
+
+                li {
+                    padding-bottom: 20px;
+                    
+                    a {
+                        display: flex !important;
+
+                        @include m.bp {
+                            // display: flex;
+                            font-size: 10px;
+                            
+                        }
+
+                        img {
+                            // width: 20px;
+                            // height: 20px;
+                            // margin-right: 6px;
+                            // margin-bottom: 6px;
+
+                            margin-right: 8px;    
+                            width: 30px;          
+                            height: auto;
+                            border-radius: 20%;
+
+                            @include m.bp {
+                                width: 20px;  
+                            }
+                        }
+                        
+                        span {
+                            font-size: 24px;
+                            
+                            @include m.bp {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
             }
-                
-            span {
-                font-size: 24px;
-            }
-            
         }
 
         .copyright {
+            padding-top: 50px;
             text-align: center;
+            color: white;
         }
+        
     }
 }
-
-// footer {
-//     background: #000;
-//     padding: 60px 20px;
-//     color: #fff;
-// }
-
-// .footer-nav ul {
-//     display: flex;
-//     gap: 30px;
-//     margin: 20px 0;
-// }
-
-// .footer-snslist {
-//     // color: #fff;
-//     display: flex;
-//     gap: 20px;
-// }
-
-// .footer-snslist i {
-//     margin-right: 10px;
-// }
-
-// .copyright {
-//     text-align: center;
-//     padding: 12px 0;
-//     font-size: 15px;
-//     color: #333;
-// }

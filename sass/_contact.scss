@@ -4,18 +4,32 @@
 
 #contact {
     color: #fff;
-    padding: 60px 20px;
-    
+    padding-top: 100px;
+
+    @include m.bp {
+        padding-top: 80px;
+    }
+
         
     .flex {
         display: flex;
         justify-content: space-between;
         // align-items: center;
+
+            img {
+                width: 50%;
+            }
+
         
             .small {
                 font-size: 24px;
                 color: #333;
                 padding-top: 50px;
+
+                @include m.bp {
+                    font-size: 12px;
+                    padding-top: 15px;
+                }
             }
         }
 

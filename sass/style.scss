@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 
-@use 'mixin' as m;
-@use 'variables' as v;
+@use 'mixin';
+@use 'variables';
 @use 'common';
 @use 'header';
 @use 'about';

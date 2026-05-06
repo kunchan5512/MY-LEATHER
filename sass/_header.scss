@@ -12,8 +12,13 @@ header {
     z-index: 10;
     position: fixed;
 
+    @include m.bp {
+        height: 60px;
+    }
+
     .toggle-btn {
         display: none!important;
+        
     }
 
     #mask {
@@ -25,40 +30,67 @@ header {
         width: 60px;
     }
 
+    h1 .logo-name {
+        font-size: 32px;
+
+        @include m.bp {
+            font-size: 12px;
+        }
+    }
+
     nav {
         ul {
             display: flex;
             gap: 30px;
             list-style: none;
          
-           nav-menu {
-            color: #ddd;
+           .nav-menu {
+                color: #ddd;
             
-            font-weight: bold;
+                font-weight: bold;
+
+                @include m.bp {
+                    // .nav-menu {
+                    position: fixed;
+                    top: 0;
+                    right: -100%;
+                    width: 70%;
+                    height: 100vh;
+                    background: #fff;
+                    flex-direction: column;
+                    padding: 80px 20px;
+                    transition: 0.3s;
+                }
+            }
            }
 
             a {
             letter-spacing: 0.1em;
             font-size: 24px;
+
+            @include m.bp {
+                font-size: 10px;
+                font-weight: bold;
+            }
             }
         }
-    }
+}
 
 
-    @media screen and (max-width: 767px) {
-        #navi ul li {
-            padding: 10px 0;
-        }
+    // @media screen and (max-width: 767px) {
+    //     #navi ul li {
+    //         padding: 10px 0;
+    //     }
 
-    .toggle_btn {
-        display: block;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        width: 30px;
-        height: 24px;
-        z-index: 100;
-        cursor: pointer;
+    //     .toggle_btn {
+    //         display: block;
+    //         position: fixed;
+    //         top: 20px;
+    //         right: 20px;
+    //         width: 30px;
+    //         height: 24px;
+    //         z-index: 100;
+    //         cursor: pointer;
 
 //         width: 30px;
 //         height: 30px;
@@ -67,77 +99,81 @@ header {
 //         transition: all 0.5s;
 //         cursor: pointer;
 //         border: 1px dotted red;
-    }
+//     }
 
-    .toggle-btn span {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background-color: #333;
-        transition: all 0.4s;
-    }
-    
-    .toggle-btn span:nth-child(1) { top: 0; }
-    .toggle-btn span:nth-child(2) { top: 11px; }
-    .toggle-btn span:nth-child(3) { bottom: 0; }
-
-    /* クリックされて「open」クラスがついた時の3本線の動き（×印） */
-    .open .toggle-btn span:nth-child(1) { transform: translateY(11px) rotate(-45deg); }
-    .open .toggle-btn span:nth-child(2) { opacity: 0; }
-    .open .toggle-btn span:nth-child(3) { transform: translateY(-11px) rotate(45deg); }
-/*
-ハンバーガーメニューの線の設定（メニューが閉じている時）
-*/
-//     .toggle_btn span {
-//   /* spanはインライン要素のため */
+//     .toggle-btn span {
 //         display: block;
+//         position: absolute;
 //         width: 100%;
 //         height: 2px;
 //         background-color: #333;
-//         transition: all 0.5s;
-//         position: absolute; /*対象*/
+//         transition: all 0.4s;
 //     }
+    
+//     .toggle-btn span:nth-child(1) { top: 0; }
+//     .toggle-btn span:nth-child(2) { top: 11px; }
+//     .toggle-btn span:nth-child(3) { bottom: 0; }
+
+//     /* クリックされて「open」クラスがついた時の3本線の動き（×印） */
+//     .open .toggle-btn span:nth-child(1) { transform: translateY(11px) rotate(-45deg); }
+//     .open .toggle-btn span:nth-child(2) { opacity: 0; }
+//     .open .toggle-btn span:nth-child(3) { transform: translateY(-11px) rotate(45deg); }
 // /*
-// 1本目の線の位置を設定
+// ハンバーガーメニューの線の設定（メニューが閉じている時）
 // */
-//     .toggle_btn span:nth-child(1) {
-//         top: 36%;
-//     }
-// /*
-// 2本目の線の位置を設定
-// */
-//     .toggle_btn span:nth-child(2) {
-//         top: 50%;
-//     }
-//     .toggle_btn span:nth-child(3) {
-//         top: 64%;
-//     }
+// //     .toggle_btn span {
+// //   /* spanはインライン要素のため */
+// //         display: block;
+// //         width: 100%;
+// //         height: 2px;
+// //         background-color: #333;
+// //         transition: all 0.5s;
+// //         position: absolute; /*対象*/
+// //     }
+// // /*
+// // 1本目の線の位置を設定
+// // */
+// //     .toggle_btn span:nth-child(1) {
+// //         top: 36%;
+// //     }
+// // /*
+// // 2本目の線の位置を設定
+// // */
+// //     .toggle_btn span:nth-child(2) {
+// //         top: 50%;
+// //     }
+// //     .toggle_btn span:nth-child(3) {
+// //         top: 64%;
+// //     }
 
-// /*
-// 1本目の線を-45度回転
-// transformで線のど真ん中の点を中心に動く
-// */
+// // /*
+// // 1本目の線を-45度回転
+// // transformで線のど真ん中の点を中心に動く
+// // */
 
-//     .open .toggle_btn span:nth-child(1) {
-//         transform: rotate(-45deg);
-//         top: 50%;
-//     }
+// //     .open .toggle_btn span:nth-child(1) {
+// //         transform: rotate(-45deg);
+// //         top: 50%;
+// //     }
 
-// /*2本目の線を45度回転*/
-//     .open .toggle_btn span:nth-child(2){
-//         transform: rotate(45deg);  
-//     }
+// // /*2本目の線を45度回転*/
+// //     .open .toggle_btn span:nth-child(2){
+// //         transform: rotate(45deg);  
+// //     }
 
-// /* 3本目 */
-//     .open .toggle_btn span:nth-child(3) {
-//         transform: rotate(45deg) ;
-//         top: 50%;
-//     }
-}
+// // /* 3本目 */
+// //     .open .toggle_btn span:nth-child(3) {
+// //         transform: rotate(45deg) ;
+// //         top: 50%;
+// //     }
+// }
 
     h1 a {
         display: flex;
         justify-content: space-between;
+
+        @include m.bp {
+            width: 30px;
+        }
+
     }
-}
