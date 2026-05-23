@@ -75,30 +75,6 @@ li {
   }
 }
 
-/*一旦隠す
-.bg-mainvisual {
-    position: relative;
-    overflow: hidden;
-
-    img {
-        width: 100%;
-        height: calc(100vh - 80px);
-        object-fit: cover;
-    }
-
-    .fade li {
-        position: absolute;
-        top: 0;
-        right: 0;
-        /* 最初は3枚の画像を非表示にしておく */
-/*
-        アニメーションを実行
-        fade：下で定義している「@keyframes fade」を実行
-        15s：「@keyframes fade」の処理を15秒かけて実行
-        infinite：アニメーションの処理を無限に繰り返す
-    }        animation: fade 15s infinite;
-}
-*/
 /*試しにいれてみる*/
 .bg-mainvisual {
   position: relative;
